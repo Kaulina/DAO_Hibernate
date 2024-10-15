@@ -18,6 +18,6 @@ public class Person {
     private DataPerson dataPerson;
     @Column(name = "phone_number", nullable = false, length = 30)
     private String phoneNumber;
-    @Column(name = "city_of_living",nullable = false, length = 100)
+    @Column(name = "city_of_living", nullable = false, length = 100)
     private String cityOfLiving;
 }

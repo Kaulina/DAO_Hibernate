@@ -1,6 +1,6 @@
 package ru.netology.controller;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/persons")
 public class ControllerPerson {
 
@@ -34,6 +34,11 @@ public class ControllerPerson {
             (@RequestParam(value = "name", required = false) String name, @RequestParam(value = "surname", required = false) String surname) {
         return servicePerson.findPersonByDataPerson_NameContainingIgnoreCaseAndAndDataPerson_SurnameContainingIgnoreCase
                 (name, surname);
+    }
+
+    @GetMapping("/hi")
+    public String hi() {
+        return "This user is not authenticated!";
     }
 
 }
